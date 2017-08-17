@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/style.css" rel='stylesheet'>
+    <style>
+      .name {
+        font-family: Courier New, Courier, monospace;
+        font-size: 1.9em;
+      }
+      .jumbotron {
+        background-color: ghostwhite;
+      }
+      </style>
+    <meta charset="utf-8" />
+  </head>
+  <body id="intro" class="into">
+    <div class="container-fluid">
+      <div class="row">
+    <%- include('templates/navigation') %>
+      </div>
+  <div class="row">
+    <div class="jumbotron container">
+      <h1>Say Whats On Your Mind</h1>
+      <p>Welcome to <%= title %>. A place where u speak your mind without repercursion.</p>
+      <% if(!user) {%>
+      <p> Login or Register to Speak!</p>
+       <% } %>
+    </div>
+    
+    
+  </div>
+    </div>
+    <script src="javascripts/dist/bundle.js"></script>
+  </body>
+</html>

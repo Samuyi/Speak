@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/style.css" rel='stylesheet'>
+    <style>
+        .name {
+            font-family: Courier New, Courier, monospace;
+            font-size: 1.9em;
+        }
+
+        .jumbotron {
+            background-color: ghostwhite;
+        }
+    </style>
+    <meta charset="utf-8" />
+
+</head>
+
+<body id="intro" class="into" ng-app="speakApp">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="/api/speak"><em>Speak</em></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 ">
+            </div>
+            <div class='col-md-4 col-sm-6' ng-controller="loginController">
+                <form ng-submit='login()'>
+                    <div class='form-group'>
+                        <label for="username">Username</label>
+                        <input required type='text' class="form-control" ng-model='username' name='username' placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input required type='password' class="form-control" ng-model='password' name='password' placeholder="Password">
+                    </div>
+                    <input type="submit" value="Log in" class="btn btn-primary" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.SPEAK = <%= user %>
+    </script>
+    <script src="javascripts/dist/bundle.js"></script>
+
+</body>
+
+</html>
